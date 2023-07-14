@@ -1,0 +1,62 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'api/style.css' %}">
+    <style>
+        body {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE 10+ */
+            user-select: none;
+            /* Standard syntax */
+        }
+    </style>
+    
+    
+    </head>
+    
+    <body id="bodyy">
+        <!-- <p class="unselectable">This text is unselectable.</p> -->
+        <div id="container">
+            <div id="upperbar">
+                <div id="result">
+                    <span id="wpm"></span>
+                    <span id="wpmFollowUp">WPM</span>
+                </div>
+                <div id="navbarWordAndNewPara">
+                    <div class="differentWordCount">
+                        <div class="count">50</div>
+                        <div class="count">100</div>
+                        <div class="count">150</div>
+                        <div class="count">200</div>
+                        <!-- <div class="count manualCount">
+                            <input type="text" placeholder="Custom">
+                        </div> -->
+                    </div>
+                    <div id="newPara">
+                        <span>New</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="toWrite">
+                <!-- <span>T</span>
+                <span>h</span>
+                <span>e</span>
+                &nbsp;
+                <span>M</span> -->
+            </div>
+        </div>
+    
+    </body>
+    <script src="{% static 'api/index.js' %}"></script>
+    
+    </html>
