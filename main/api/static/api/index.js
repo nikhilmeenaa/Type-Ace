@@ -3,7 +3,7 @@ const paraParentDiv = document.getElementById("toWrite");
 // calling the api and getting the paragraph
 
 let para = "cooler",
-  countValue = 50;
+  countValue = 5;
 
 let totalWords = para.split(" ").length;
 
@@ -81,6 +81,11 @@ let Started = false,
 result = document.getElementById("result");
 wpm = document.getElementById("wpm");
 newPara = document.getElementById("newPara");
+progressLength = document.getElementById("progressLength");
+
+
+
+
 
 tArea.addEventListener("keydown", (event) => {
   if (Started == false) {
@@ -164,6 +169,13 @@ tArea.addEventListener("keydown", (event) => {
     }
   }
 
+//   Setting the length of the progress bar
+  console.log('Just above it');
+  if(states[curr] == 1){
+    progressLength.style.width = `${prev*100/(paraLength-2) + 1}%`;
+    console.log("Setting the length of the progress bar");
+  }
+
   prev = curr;
 
   if (prev == paraLength - 2 && states[prev] == 1) {
@@ -171,10 +183,17 @@ tArea.addEventListener("keydown", (event) => {
     timeTaken = (endTime - startTime) / 1000;
     result.style.visibility = "visible";
     console.log("Themes -> ", totalWords, timeTaken);
-
+    progressLength.style.width = `100%`;
     wpm.innerHTML = String(Math.round((totalWords * 60) / timeTaken));
   }
 });
+
+
+
+
+
+
+
 
 const resetFunction = async (value = 50) => {
   //   console.log("we are here");
@@ -182,12 +201,7 @@ const resetFunction = async (value = 50) => {
   response = await fetch(`/getparagraph/${value}`);
   // console.log(response);
   let paraResponse = await response.json();
-  //    console.log(paraResponse.paragraph);
-
-  //   result = await JSON.parse(response.json());
-  //   result = result.paragraph;
-
-  //   console.log(result);
+  
 
   // Setting the visibility of the result to none
   result.style.visibility = "hidden";
@@ -241,6 +255,12 @@ const resetFunction = async (value = 50) => {
   Started = false;
   // startTime, endTime,timeTaken;
 };
+
+
+
+
+
+
 
 newPara.addEventListener("click", async () => {
   // console.log("value -> " );
