@@ -1,0 +1,42 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{%static 'api/style.css'%}"> -->
+    <link rel="stylesheet" href="{%static 'api/about.css'%}">
+</head>
+<body>
+    <div class="about">
+        <div class="website">
+            <div>
+                <span class="siteName">Ace Type</span>
+                <span class="otherInformation">
+                    is specialized website for practise typing, which provides a unique way to practise the different patterns out there in the English language, helps to master them which eventually leads to faster speeds.
+                    <div class="motoDiv">The one of the main moto of this website is</div>
+                    <div class="moto">Focus on ACCURACY, SPEED will eventually incresase on its own</div>
+                </span>
+            </div>
+        </div>
+        <div class="developers">
+            <div class="introduction">
+                This website is developed by Nikhil Meena, and it is opensource, your contributions are always welcome.
+            </div>
+            <div class="sitesLinks">
+                <a href="https://www.linkedin.com/in/nikhil-meena-8152771a1/" target="_blank" class="linkedin">
+                    <img src="{% static '/api/linkedin.png' %}" alt="linkedin">
+                </a>
+                <a href="https://github.com/nikhilmeenaa"  target="_blank"class="Github">
+                    <img src="{% static '/api/github.png' %}" alt="Github">
+                </a>
+                <a href="https://www.instagram.com/nikhilmeenaaa/" target="_blank" class="Instagram">
+                    <img src="{% static '/api/instagram.png' %}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

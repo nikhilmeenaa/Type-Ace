@@ -1,4 +1,4 @@
-{%load static%}
+<!-- {%load static%} -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{%static 'api/style.css' %}">
+    <link rel="stylesheet" href="{%static 'api/navbarStyle.css' %}">
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbarStyle.css"> -->
     <style>
         body {
             -webkit-user-select: none;
@@ -19,47 +22,60 @@
             /* Standard syntax */
         }
     </style>
-    
-    
-    </head>
-    
-    <body id="bodyy">
-        <!-- <p class="unselectable">This text is unselectable.</p> -->
-        <div id="container">
-            <div class="progress">
-                <div id = "progressLength">a</div>
+
+
+</head>
+
+<body id="bodyy">
+
+    <!-- <p class="unselectable">This text is unselectable.</p> -->
+
+    <div class="navbar">
+        <div class="acetype">Ace Type</div>
+        <div class="links">
+            <div class="link"><a href="#">Patterns</a></div>
+            <div class="link"><a href="/about">About</a></div>
+            <div class="link"><a href="#">Profile</a></div>
+            <div class="link"><a href="#">Settings</a></div>
+        </div>
+    </div>
+
+
+    <div id="container">
+        <div class="progress">
+            <div id="progressLength">a</div>
+        </div>
+        <div id="upperbar">
+            <div id="result">
+                <span id="wpm"></span>
+                <span id="wpmFollowUp">WPM</span>
             </div>
-            <div id="upperbar">
-                <div id="result">
-                    <span id="wpm"></span>
-                    <span id="wpmFollowUp">WPM</span>
-                </div>
-                <div id="navbarWordAndNewPara">
-                    <div class="differentWordCount">
-                        <div class="count">50</div>
-                        <div class="count">100</div>
-                        <div class="count">150</div>
-                        <div class="count">200</div>
-                        <!-- <div class="count manualCount">
+            <div id="navbarWordAndNewPara">
+                <div class="differentWordCount">
+                    <div class="count">50</div>
+                    <div class="count">100</div>
+                    <div class="count">150</div>
+                    <div class="count">200</div>
+                    <!-- <div class="count manualCount">
                             <input type="text" placeholder="Custom">
                         </div> -->
-                    </div>
-                    <div id="newPara">
-                        <span>New</span>
-                    </div>
+                </div>
+                <div id="newPara">
+                    <span>New</span>
                 </div>
             </div>
-    
-            <div id="toWrite">
-                <!-- <span>T</span>
+        </div>
+
+        <div id="toWrite">
+            <!-- <span>T</span>
                 <span>h</span>
                 <span>e</span>
                 &nbsp;
                 <span>M</span> -->
-            </div>
         </div>
-    
-    </body>
-    <script src="{% static 'api/index.js' %}"></script>
-    
-    </html>
+    </div>
+
+</body>
+<script src="{% static 'api/index.js' %}"></script>
+
+</html>

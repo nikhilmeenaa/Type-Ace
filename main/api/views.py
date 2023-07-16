@@ -31,3 +31,7 @@ def getParagraph(request, noofwords = 50):
     
     return HttpResponse(jsonData, content_type="application/json")
 
+
+
+def aboutPage(request):
+    return render(request, 'api/about.html')

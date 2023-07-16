@@ -5,7 +5,7 @@
 
 
 body {
-    background-color: rgb(58, 57, 57);
+    background-color: rgb(35, 34, 34);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,27 +22,27 @@ body {
 }
 
 
-.progress{
+.progress {
     display: block;
     /* border : 1px solid rgb(149, 140, 140); */
     background-color: rgb(30, 30, 30);
     margin-top: 20px;
     width: 70vw;
-    height: 2vh;   
-    background-color: rgb(50, 116, 163);
-    position : relative;
-    border : 1px solid white;
-    margin-bottom : 100px;
-    border-radius : 5px;
+    height: 2vh;
+    background-color: rgb(55, 55, 56);
+    position: relative;
+    border: 1px solid white;
+    margin-bottom: 100px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
 
-#progressLength{
-    background-color: rgb(68, 163, 59);
-    width : 1%;
-    height : 100%;
-    color : transparent;
+#progressLength {
+    background-color: rgb(59, 138, 105);
+    width: 1%;
+    height: 100%;
+    color: transparent;
     overflow: hidden;
 }
 
@@ -216,7 +216,7 @@ textarea {
     background-color: transparent;
     color: rgb(249, 190, 65);
     filter: blur(2px);
-    
+
 }
 
 textarea:focus {

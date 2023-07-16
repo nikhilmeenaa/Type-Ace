@@ -198,6 +198,7 @@ tArea.addEventListener("keydown", (event) => {
 const resetFunction = async (value = 50) => {
   //   console.log("we are here");
 
+  progressLength.style.width = "1%";
   response = await fetch(`/getparagraph/${value}`);
   // console.log(response);
   let paraResponse = await response.json();

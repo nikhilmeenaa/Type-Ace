@@ -1,0 +1,89 @@
+body{
+    background-color: rgb(35, 34, 34);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid white; */
+    /* height: 97vh; */
+    margin: 0;
+    padding : 0px;
+}
+
+.about
+{
+    color: rgb(206, 192, 160);
+    font-size : x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: ; */
+    height : auto;
+}
+
+.website{
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 130%;
+    /* border : 1px solid white; */
+
+}
+
+.website>div{
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+}
+
+.siteName
+{
+    font-size : xx-large;
+    color: rgb(7, 201, 198);
+}
+
+.motoDiv{
+    margin-top : 50px;
+    text-align: center;
+    margin-bottom : 30px;
+}
+
+.moto{
+    font-size : x-large;
+    text-align:center;
+    color: rgb(7, 201, 198);
+}
+
+.developers{
+    padding-top: 5vh;
+    width : 100vw;
+    height : 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(22, 21, 21) ;
+    margin-bottom: 0px;
+    justify-content: space-around;
+    padding-bottom: 5vh;
+}
+
+.developers .introduction{
+    width : 70vw;
+    text-align: center;
+    font-size: large;
+}
+
+.sitesLinks{
+    display: flex;
+    align-items: center;
+}
+.sitesLinks a{
+    margin : 10px;
+}
+
+.sitesLinks a img{
+    height : 50px;
+}
