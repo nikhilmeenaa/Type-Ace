@@ -7,12 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="{%static 'api/style.css'%}"> -->
+    <link rel="stylesheet" href="{%static 'api/navbarStyle.css'%}">
     <link rel="stylesheet" href="{%static 'api/about.css'%}">
+    
 </head>
 <body>
+    
     <div class="about">
+        
         <div class="website">
-            <div>
+            {%include "api/navbar.html"%}
+            <div id = "aboutInformation">
                 <span class="siteName">Ace Type</span>
                 <span class="otherInformation">
                     is specialized website for practise typing, which provides a unique way to practise the different patterns out there in the English language, helps to master them which eventually leads to faster speeds.

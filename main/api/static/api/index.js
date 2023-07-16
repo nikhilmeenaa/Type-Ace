@@ -3,7 +3,7 @@ const paraParentDiv = document.getElementById("toWrite");
 // calling the api and getting the paragraph
 
 let para = "cooler",
-  countValue = 5;
+  countValue = 30;
 
 let totalWords = para.split(" ").length;
 
@@ -199,7 +199,15 @@ const resetFunction = async (value = 50) => {
   //   console.log("we are here");
 
   progressLength.style.width = "1%";
-  response = await fetch(`/getparagraph/${value}`);
+  let response;
+//   console.log(window.location.pathname )
+
+  if(window.location.path == '/patterns')
+    response = await fetch(`/getpatterns/${value}`);
+  else 
+    response = await fetch(`/getparagraph/${value}`);
+
+
   // console.log(response);
   let paraResponse = await response.json();
   
@@ -280,3 +288,8 @@ for (let i = 0; i < countElements.length; i++) {
     resetFunction(countValue);
   });
 }
+
+
+// console.log(window.location);
+
+// console.log(window.location.pathname)

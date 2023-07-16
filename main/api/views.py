@@ -35,3 +35,24 @@ def getParagraph(request, noofwords = 50):
 
 def aboutPage(request):
     return render(request, 'api/about.html')
+
+
+def patterns(request):
+    return render(request,"api/homePage.html")
+
+
+def getPatterns(request):
+    randomString = ""
+
+    print(noofwords)
+    # if(noofwords)
+    for i in range(0,noofwords):
+        randomIndex = np.random.randint(0,len(word_df["words"]))
+        randomString += word_df["words"][randomIndex] + " "
+
+    response = {
+        "paragraph": randomString,
+    }
+    jsonData = json.dumps(response)
+    
+    return HttpResponse(jsonData, content_type="application/json")

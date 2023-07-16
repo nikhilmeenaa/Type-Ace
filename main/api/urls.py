@@ -5,7 +5,9 @@ urlpatterns = [
     path("" , views.homePage),
         path("about" , views.aboutPage),
     path("getparagraph", views.getParagraph , {"noofwords": 50 }),
-    path("getparagraph/<int:noofwords>", views.getParagraph)
+    path("getparagraph/<int:noofwords>", views.getParagraph),
+    path("patterns", views.patterns),
+    path("getpatterns", views.getPatterns)
 ]
 
 
