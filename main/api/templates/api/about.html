@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="{%static 'api/navbarStyle.css'%}">
     <link rel="stylesheet" href="{%static 'api/about.css'%}">
     
+
+    <style>
+        body {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE 10+ */
+            user-select: none;
+            /* Standard syntax */
+        }
+    </style>
+
 </head>
 <body>
     
@@ -44,4 +58,16 @@
         </div>
     </div>
 </body>
+
+
+
+<script>
+    links = document.querySelectorAll('.link a');
+    console.log(links)
+
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].href == window.location.href)
+            links[i].style.color = "rgb(23, 255, 251)";
+    }
+</script>
 </html>

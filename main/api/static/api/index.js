@@ -293,3 +293,16 @@ for (let i = 0; i < countElements.length; i++) {
 // console.log(window.location);
 
 // console.log(window.location.pathname)
+
+
+
+
+//  HIGHLIGHTING THE CURRENT ACTIVE LINK 
+
+links = document.querySelectorAll('.link a');
+console.log(links)
+
+for (let i = 0; i < links.length; i++) {
+    if(links[i].href == window.location.href)
+        links[i].style.color = "rgb(23, 255, 251)";
+}
