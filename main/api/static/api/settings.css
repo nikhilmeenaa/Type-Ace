@@ -26,7 +26,6 @@
     /* border : 1px solid white; */
     width: 100%;
     border-spacing: 10px;
-    color : white;
     gap : 20px 20px;
     position: flex-end ;
     margin-top: auto;
@@ -110,7 +109,8 @@
     grid-column-start: 3;
     grid-column-end: 5;
 
-    background-color: rgb(223, 230, 198);
+    background-color: rgb(197, 202, 179);
+    /* background-color: rgb(25, 181, 11); */
     color: rgb(48, 49, 43);
     /* background-color: blueviolet; */
 }

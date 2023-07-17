@@ -306,3 +306,9 @@ for (let i = 0; i < links.length; i++) {
     if(links[i].href == window.location.href)
         links[i].style.color = "rgb(23, 255, 251)";
 }
+
+
+console.log("Local Storage -> " )
+window.localStorage['color']  = "red";
+
+console.log(window.localStorage);

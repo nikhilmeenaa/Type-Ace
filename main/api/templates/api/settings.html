@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="{% static 'api/style.css' %}">
     <link rel="stylesheet" href="{% static 'api/navbarStyle.css' %}">
     <link rel="stylesheet" href="{% static 'api/settings.css' %}">
+
+
+    <style>
+        body {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE 10+ */
+            user-select: none;
+            /* Standard syntax */
+        }
+    </style>
+    
 </head>
 <body>
         <!-- <h1>Settings</h1> -->
@@ -17,14 +32,14 @@
             {%include "api/navbar.html"%}
             <div class="themeHeading">Themes</div>
             <div class="actualThemes">
-                <div class="theme"  id = "theme1"> <div>TopG</div></div>
-                <div class="theme"  id = "theme2"> <div>TopG</div></div>
-                <div class="theme"  id = "theme3"> <div>TopG</div></div>
-                <div class="theme"  id = "theme4"> <div>TopG</div></div>
-                <div class="theme"  id = "theme5"> <div>TopG</div></div>
-                <div class="theme"  id = "theme6"> <div>TopG</div></div>
-                <div class="theme"  id = "theme7"> <div>TopG</div></div>
-                <div class="theme"  id = "theme8"> <div>TopG</div></div>
+                <div class="theme" name = "1" id = "theme1"> <div name = "1" >TopG</div></div>
+                <div class="theme" name = "2" id = "theme2"> <div name = "2" >TopG</div></div>
+                <div class="theme" name = "3" id = "theme3"> <div name = "3" >TopG</div></div>
+                <div class="theme" name = "4" id = "theme4"> <div name = "4" >TopG</div></div>
+                <div class="theme" name = "5" id = "theme5"> <div name = "5" >TopG</div></div>
+                <div class="theme" name = "6" id = "theme6"> <div name = "6" >TopG</div></div>
+                <div class="theme" name = "7" id = "theme7"> <div name = "7" >TopG</div></div>
+                <div class="theme" name = "8" id = "theme8"> <div name = "8" >Default</div></div>
             </div>
 
         </div>
@@ -38,4 +53,6 @@
             links[i].style.color = "rgb(23, 255, 251)";
     }
 </script>
+
+<script src = "{%static 'api/settings.js'%}" ></script>
 </html>
