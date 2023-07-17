@@ -48,7 +48,8 @@ body{
 .siteName
 {
     font-size : xx-large;
-    color: rgb(7, 201, 198);
+    /* color: rgb(7, 201, 198); */
+    /* color: rgb(94, 233, 47); */
     /* box-shadow: 0px 20px 0px 0px black; */
 }
 
@@ -85,6 +86,7 @@ body{
     width : 70vw;
     text-align: center;
     font-size: large;
+    color : whitesmoke;
 }
 
 .sitesLinks{
