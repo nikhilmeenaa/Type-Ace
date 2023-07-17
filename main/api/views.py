@@ -56,3 +56,8 @@ def getPatterns(request):
     jsonData = json.dumps(response)
     
     return HttpResponse(jsonData, content_type="application/json")
+
+
+def sett(request):
+    print("Settings")   
+    return render(request, "api/settings.html")

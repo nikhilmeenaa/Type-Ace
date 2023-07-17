@@ -1,0 +1,138 @@
+.container{
+    display: flex;
+    flex-direction : column;
+    align-items: center;
+    /* justify-content: space-between; */
+    width : 80vw;
+    /* border : 1px solid white; */
+    height : 97vh;
+    /* padding : 6vh 0 ; */
+}
+
+.themeHeading{
+    color: rgb(10, 193, 190);
+    font-size: xx-large;
+    margin-top: 60px;
+}
+
+.navbar{
+    margin-top: 40px;
+}
+
+.actualThemes{
+    display : grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows : repeat(2 , 15vh);
+    /* border : 1px solid white; */
+    width: 100%;
+    border-spacing: 10px;
+    color : white;
+    gap : 20px 20px;
+    position: flex-end ;
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+.theme{
+    text-align: center;
+    border : 1px solid rgb(40, 42, 42);
+    border-radius : 20px;
+    
+    transition : transform 0.2s ease-in-out;
+    cursor : pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.theme:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 2px rgb(80, 79, 79);
+}
+
+#theme1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        background-color: rgb(19, 19, 19);
+        color : rgb(255, 243, 15);
+        /* background-color: blueviolet; */
+    }
+
+    #theme2 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 5;
+
+        background-color: rgb(11, 32, 46);
+        color: rgb(33, 235, 148);
+        /* background-color: blueviolet; */
+    }
+
+    #theme3 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 5;
+        grid-column-end: 7;
+        
+        background-color: rgb(4, 76, 69);
+        color: rgb(30, 251, 96);
+        /* background-color: blueviolet; */
+    }
+
+    #theme4 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 7;
+        grid-column-end: 9;
+        background-color: rgb(16, 29, 37);
+        color: rgb(231, 237, 172);
+        /* background-color: blueviolet; */
+    }
+#theme5 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end:3;
+
+    background-color: rgb(32, 23, 33);
+    color: rgb(248, 223, 255);
+    /* background-color: blueviolet; */
+}
+
+#theme6 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
+
+    background-color: rgb(223, 230, 198);
+    color: rgb(48, 49, 43);
+    /* background-color: blueviolet; */
+}
+
+#theme7 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 7;
+
+        background-color: rgb(186, 218, 238);
+            color: rgb(32, 33, 23);
+    /* background-color: blueviolet; */
+}
+
+#theme8 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 7;
+    grid-column-end: 9;
+
+        background-color: rgb(162, 251, 244);
+            color: rgb(18, 18, 15);
+    /* background-color: blueviolet; */
+}

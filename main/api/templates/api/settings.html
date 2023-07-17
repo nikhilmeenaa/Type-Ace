@@ -1,0 +1,41 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'api/style.css' %}">
+    <link rel="stylesheet" href="{% static 'api/navbarStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'api/settings.css' %}">
+</head>
+<body>
+        <!-- <h1>Settings</h1> -->
+        <div class="container">
+            {%include "api/navbar.html"%}
+            <div class="themeHeading">Themes</div>
+            <div class="actualThemes">
+                <div class="theme"  id = "theme1"> <div>TopG</div></div>
+                <div class="theme"  id = "theme2"> <div>TopG</div></div>
+                <div class="theme"  id = "theme3"> <div>TopG</div></div>
+                <div class="theme"  id = "theme4"> <div>TopG</div></div>
+                <div class="theme"  id = "theme5"> <div>TopG</div></div>
+                <div class="theme"  id = "theme6"> <div>TopG</div></div>
+                <div class="theme"  id = "theme7"> <div>TopG</div></div>
+                <div class="theme"  id = "theme8"> <div>TopG</div></div>
+            </div>
+
+        </div>
+</body>
+<script>
+    links = document.querySelectorAll('.link a');
+    console.log(links)
+
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].href == window.location.href)
+            links[i].style.color = "rgb(23, 255, 251)";
+    }
+</script>
+</html>

@@ -7,7 +7,8 @@ urlpatterns = [
     path("getparagraph", views.getParagraph , {"noofwords": 50 }),
     path("getparagraph/<int:noofwords>", views.getParagraph),
     path("patterns", views.patterns),
-    path("getpatterns", views.getPatterns)
+    path("getpatterns", views.getPatterns),
+    path("set", views.sett),
 ]
 
 
