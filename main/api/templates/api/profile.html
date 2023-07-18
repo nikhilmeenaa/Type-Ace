@@ -1,0 +1,87 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'api/navbarStyle.css'%}">
+    <!-- <link rel="stylesheet" href="{%static 'api/style.css'%}"> -->
+    <link rel="stylesheet" href="{%static 'api/profile.css'%}">
+</head>
+<body>
+
+    {% include 'api/navbar.html' %}
+    <div class = "container">
+        <div class="userInformation">
+            <div class="userName">nikhilmeena</div>
+            <div class="totalTestsTaken">Total Tests Taken {{151}}</div>
+            <div class="testsOverview">
+                <table>
+                    <tr>
+                        <th>Words</th>
+                        <th>Best</th>
+                        <th>Avg</th>
+                        <th>Tests taken</th>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</th>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</th>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</th>
+                    </tr>
+                    <tr>
+                        <td>150</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="logout">Logout</div>
+        </div>
+        <div class="testResults">
+            <div class="testResultsHeading">Results</div>
+            <div class="words">
+                <div class="all">All</div>
+                <div class="30">30</div>
+                <div class="50">50</div>
+                <div class="100">100</div>
+                <div class="150">150</div>
+                <div class="200">200</div>
+            </div>
+            <div class="results">
+                <div class="resultInstance">
+                    <div class="wordsType">50</div>
+                    <div class="speed">110 WPM</div>
+                    <div class="date">5th Dec, 2023</div>
+                </div>
+                <div class="resultInstance">
+                    <div class="wordsType">50</div>
+                    <div class="speed">110 WPM</div>
+                    <div class="date">5th Dec, 2023</div>
+                </div>
+                <div class="resultInstance">
+                    <div class="wordsType">50</div>
+                    <div class="speed">110 WPM</div>
+                    <div class="date">5th Dec, 2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{%static 'api/settings.js'%}"></script>
+</html>

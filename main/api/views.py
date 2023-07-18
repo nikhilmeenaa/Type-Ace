@@ -36,6 +36,8 @@ def getParagraph(request, noofwords = 50):
 def aboutPage(request):
     return render(request, 'api/about.html')
 
+def profilePage(request):
+    return render(request , 'api/profile.html')
 
 def patterns(request):
     return render(request,"api/homePage.html")

@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 class RegisterForm(UserCreationForm):
 
-    email = forms.CharField(
+    email = forms.EmailField(
         max_length=100,
         required = True,
         help_text='Enter Email Address',
@@ -17,6 +17,13 @@ class RegisterForm(UserCreationForm):
         required = True,
         help_text='Enter Username',
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
+    )
+
+    first_name = forms.CharField(
+        max_length=200,
+        required = True,
+        help_text='Enter First Name',
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}),
     )
 
     password1 = forms.CharField(
