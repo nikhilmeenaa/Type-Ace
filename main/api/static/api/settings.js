@@ -1,4 +1,4 @@
-console.log("Themes JS");
+// console.log("Themes JS");
 
 const arr = [
   {
@@ -136,7 +136,7 @@ const navbarLinks = document.querySelectorAll(".links a");
 const aceType=document.querySelector(".acetype");
 
 
-themeElements = document.querySelectorAll(".theme");
+
 
 
 // themeHeading.style.color = "Yellow";
@@ -144,7 +144,7 @@ themeElements = document.querySelectorAll(".theme");
 
 function themeChangeFunction(index) {
     // index = 1;
-    console.log("we are here");
+    // console.log("we are here");
     if(themeHeading)
         themeHeading.style.color = arr[index].themeHeading;
     if (navbar) navbar.style.color = arr[index].navbar;
@@ -186,11 +186,19 @@ function themeChangeFunction(index) {
     if(siteName)siteName.style.color = arr[index].siteNameColor;
 
     if (moto) moto.style.color = arr[index].motoColor;
+
 }
 
 if(window.localStorage.hasOwnProperty("theme")) {
-    themeChangeFunction(window.localStorage.theme);
+    if(!isNaN(window.localStorage.getItem("theme")) )
+        themeChangeFunction(window.localStorage.theme);
+    // else 
+        // themeChangeFunction(8);
+    console.log(typeof(window.localStorage.theme));
 }
+
+
+themeElements = document.querySelectorAll(".theme");
 
 themeElements.forEach(theme => {
     theme.addEventListener('click', (event)=>{

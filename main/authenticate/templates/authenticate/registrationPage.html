@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="registrationPage">
+        <h1>Welcome to the Registration Page</h1>
+        <form action="registration" method="POST">
+            {% csrf_token %}
+            <!-- {{form.first_name}}  -->
+            {{form.as_p}}
+            <!-- {{form}} -->
+            <button type="submit">Register</button>
+        </form>
+            <div class="col-12 text-center">
+                <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="{% url 'login' %}"
+                        class="text-dark font-weight-bold">Sign In</a></p>
+            </div>
+    </div>
+</body>
+
+</html>

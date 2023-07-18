@@ -98,7 +98,7 @@ tArea.addEventListener("keydown", (event) => {
 
   // User done writing the Paragraph
   if (prev == paraLength - 2 && states[prev] == 1) {
-    console.log("Test Done!!!!!!!!!");
+    // console.log("Test Done!!!!!!!!!");
     return;
   }
   if (prev == paraLength - 2 && states[prev] == 0) {
@@ -112,7 +112,7 @@ tArea.addEventListener("keydown", (event) => {
 
   // Sorting out the differnet key presses
   if (keyPressed == "Backspace") {
-    console.log("inside back space");
+    // console.log("inside back space");
     if (prev != 0) {
       allSpans[prev - 1].style.color = "rgb(27, 221, 255)";
 
@@ -170,10 +170,10 @@ tArea.addEventListener("keydown", (event) => {
   }
 
 //   Setting the length of the progress bar
-  console.log('Just above it');
+//   console.log('Just above it');
   if(states[curr] == 1){
     progressLength.style.width = `${prev*100/(paraLength-2) + 1}%`;
-    console.log("Setting the length of the progress bar");
+    // console.log("Setting the length of the progress bar");
   }
 
   prev = curr;
@@ -300,7 +300,7 @@ for (let i = 0; i < countElements.length; i++) {
 //  HIGHLIGHTING THE CURRENT ACTIVE LINK 
 
 links = document.querySelectorAll('.link a');
-console.log(links)
+// console.log(links)
 
 for (let i = 0; i < links.length; i++) {
     if(links[i].href == window.location.href)
@@ -308,7 +308,7 @@ for (let i = 0; i < links.length; i++) {
 }
 
 
-console.log("Local Storage -> " )
+// console.log("Local Storage -> " )
 window.localStorage['color']  = "red";
 
-console.log(window.localStorage);
+// console.log(window.localStorage);
