@@ -11,7 +11,7 @@ const csrfToken = document.cookie
 // calling the api and getting the paragraph
 
 let para = "cooler",
-  countValue = 1;
+  countValue = 30;
 
 let totalWords = para.split(" ").length;
 

@@ -14,7 +14,7 @@
     {% include 'api/navbar.html' %}
     <div class = "container">
         <div class="userInformation">
-            <div class="userName">{{request.user.username}}</div>
+            <div class="userName userNameOnProfile">{{request.user.username}}</div>
             <div class="totalTestsTaken">Total Tests Taken {{ totalTests}}</div>
             <div class="testsOverview">
                 <table>
@@ -76,7 +76,7 @@
                     </div>
 
                 {%endfor%}
-                
+
             </div>
         </div>
     </div>

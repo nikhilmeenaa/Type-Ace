@@ -13,6 +13,7 @@ const arr = [
     aboutColor: "white",
     siteNameColor: "purple",
     motoColor: "purple",
+    usernameColor: "rgb(255, 243, 15)",
   },
   {
     themeHeading: "rgb(255, 243, 15)",
@@ -26,6 +27,7 @@ const arr = [
     aboutColor: "white",
     siteNameColor: "rgb(255, 243, 15)",
     motoColor: "rgb(255, 243, 15)",
+    usernameColor: "rgb(255, 243, 15)",
   },
   {
     themeHeading: "rgb(33, 235, 148)",
@@ -42,19 +44,18 @@ const arr = [
     aboutColor: "rgb(33, 235, 148)",
     siteNameColor: "cyan",
     motoColor: "cyan",
+    usernameColor: "rgb(33, 235, 148)",
   },
   {
     themeHeading: "red(255, 255, 255)",
     navbar: "rgb(10, 193, 190)",
     backgroundColor: "rgb(35, 34, 34)",
+    usernameColor: "red(255, 255, 255)",
   },
   {
     themeHeading: "rgb(231, 237, 172)",
     navbar: "rgb(231, 237, 172)",
     backgroundColor: "rgb(16, 29, 37)",
-    // background-color: rgb(223, 230, 198);
-    // color: rgb(48, 49, 43);
-
     linksHoverColor: "green",
     aceTypeHoverColor: "green",
     upperBarColor: "rgb(231, 237, 172)",
@@ -63,6 +64,7 @@ const arr = [
     aboutColor: "rgb(231, 237, 172)",
     siteNameColor: "cyan",
     motoColor: "cyan",
+    usernameColor: "rgb(231, 237, 172)",
   },
   {
     themeHeading: "rgb(248, 223, 255)",
@@ -76,6 +78,7 @@ const arr = [
     aboutColor: "rgb(248, 223, 255)",
     siteNameColor: "cyan",
     motoColor: "cyan",
+    usernameColor: "rgb(248, 223, 255)",
   },
   {
     themeHeading: "rgb(48, 49, 43)",
@@ -89,6 +92,7 @@ const arr = [
     aboutColor: "rgb(48, 49, 43)",
     siteNameColor: "purple",
     motoColor: "purple",
+    usernameColor: "rgb(178, 183, 162)",
   },
   {
     themeHeading: "rgb(48, 49, 43)",
@@ -102,6 +106,7 @@ const arr = [
     aboutColor: "rgb(48, 49, 43)",
     siteNameColor: "purple",
     motoColor: "purple",
+    usernameColor: "rgb(186, 218, 238)",
   },
   {
     themeHeading: "rgb(10, 193, 190)",
@@ -115,6 +120,7 @@ const arr = [
     aboutColor: "rgb(34, 174, 122)",
     siteNameColor: "rgb(7, 201, 198)",
     motoColor: "rgb(7, 201, 198)",
+    usernameColor: "rgb(10, 193, 190)",
   },
 ];
 
@@ -134,7 +140,7 @@ const moto = document.querySelector(".moto");
 const navbar = document.querySelector(".navbar");
 const navbarLinks = document.querySelectorAll(".links a");
 const aceType=document.querySelector(".acetype");
-
+const username = document.querySelector(".userNameOnProfile");
 
 
 
@@ -186,6 +192,12 @@ function themeChangeFunction(index) {
     if(siteName)siteName.style.color = arr[index].siteNameColor;
 
     if (moto) moto.style.color = arr[index].motoColor;
+
+    if(username){
+        console.log(index);
+        console.log("username color changing function");
+        username.style.color = arr[index].usernameColor;
+    }
 
 }
 

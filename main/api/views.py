@@ -37,7 +37,8 @@ def aboutPage(request):
     return render(request, 'api/about.html')
 
 def profilePage(request):
-    if(request.user.is_authenticated):
+
+    if (request.user.is_authenticated):
 
         userName = request.user.username
         # print(userName)
@@ -47,7 +48,8 @@ def profilePage(request):
         user = userKaData
         
         results = json.loads(userKaData.results)
-        print(results[1])
+        results.reverse()
+        # print(results[1])
         # avg30 = 1
         # avg50 = 1
         # avg100 = 1
@@ -76,8 +78,9 @@ def profilePage(request):
 
         
         return render(request , 'api/profile.html' , {"user" : userKaData , "totalTests": totalTests, "avg30" : avg30, "avg50" : avg50, "avg100" : avg100, "avg150" : avg150, "results" : results})
+
     else: 
-        return HttpResponseRedirect("/authentication/login")
+        return HttpResponseRedirect("/login")
 
 def patterns(request):
     return render(request,"api/homePage.html")
@@ -113,7 +116,7 @@ def result(request):
     userName = request.user.username
     words = json_data.get('words')
     wpm  = json_data.get('wpm')
-    print(userName , words , wpm)    
+    # print(userName , words , wpm)    
 
     userKaData = UsersData.objects.get( username = userName )
     resultsList = json.loads(userKaData.results)
@@ -122,22 +125,25 @@ def result(request):
     resultsList.append({"words": words , "wpm": wpm, "date" : date_string})
     userKaData.results = json.dumps(resultsList)
 
-    if words == 30:
+    # print(type(words))
+    # print("Here we are")
+    if words == "30" or words == 30:
+        # print("Am inside this")
         userKaData.totalTests30 = userKaData.totalTests30 + 1
         userKaData.totalTests30Sum = userKaData.totalTests30Sum + int(wpm)
         userKaData.best30 = max(userKaData.best30, int(wpm))
     
-    elif words == 50 :
+    elif words == "50" or words == 50:
         userKaData.totalTests50 = userKaData.totalTests50 + 1
         userKaData.totalTests50Sum = userKaData.totalTests50Sum + int(wpm)
         userKaData.best50 = max(userKaData.best50, int(wpm))
     
-    elif words == 100 :
+    elif words == "100" or words == 100:
         userKaData.totalTests100 = userKaData.totalTests100 + 1
         userKaData.totalTests100Sum = userKaData.totalTests100Sum + int(wpm)
         userKaData.best100 = max(userKaData.best100, int(wpm))
     
-    elif words == 150 :
+    elif words == "150" or words == 150:
         userKaData.totalTests150 = userKaData.totalTests150 + 1
         userKaData.totalTests150Sum = userKaData.totalTests150Sum + int(wpm)
         userKaData.best150 = max(userKaData.best150, int(wpm))
@@ -179,7 +185,6 @@ class CustomLoginView(LoginView):
 
 # Create your views here.
 def login(request):
-
     if(request.user.is_authenticated):
         return HttpResponseRedirect("/profile")
 
@@ -188,10 +193,7 @@ def login(request):
 
 
 def registration(request):
-
     # print(request.POST)
-    
-
     if(request.user.is_authenticated):
         return HttpResponseRedirect("/profile")
 
@@ -216,9 +218,9 @@ def registration(request):
             currUserData.save()
 
             return HttpResponseRedirect('/login')
-        else:
-            print("Form is not valid")
-            print(form.errors)
+        # else:
+            # print("Form is not valid")
+            # print(form.errors)
     else:
         form = RegisterForm()
 
