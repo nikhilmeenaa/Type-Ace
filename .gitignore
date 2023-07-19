@@ -1,0 +1,5 @@
+.venv/
+api/__pycahe__/
+main/__pycahe__/
+api/migrations/__pycahe__/
+main/migrations/__pycahe__/
