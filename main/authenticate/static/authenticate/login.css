@@ -1,0 +1,73 @@
+
+body{
+    background-color : rgb(34, 33, 33);
+    margin : 0px;
+}
+.loginPage{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    /* border : 1px solid red; */
+}
+
+.row{
+    display : flex;
+    flex-direction: column;
+    border : 1px solid rgb(62, 62, 57);
+    align-items:center;
+    color : rgb(70, 204, 231);
+    padding : 30px;
+    border-radius: 10px;
+    background-color: rgb(24, 23, 23);
+    margin-top: 15vh;
+}
+
+
+.form-group{
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border : 1px solid blue; */
+    width : 100%;
+    margin-bottom : 20px;
+}
+
+.form-group label{
+    margin-right : 20px;
+}
+
+.form-group input{
+    border : none;
+    color : cyan;
+    background-color:rgb(72, 72, 72);
+    padding : 3px 5px;
+    border-radius: 3px;
+}
+
+.form-group input:focus{
+    outline : none;
+
+}
+
+.row button{
+    background-color: rgb(28, 149, 214);
+    border : none;
+    cursor : pointer;
+    padding : 4px 7px;
+    border-radius : 3px;
+}
+
+.signup{
+    color: rgb(8, 208, 208);
+}
+
+.signin {
+    color: rgb(8, 208, 208);
+}
+
+.alert {
+    font-size: small;
+    color: red;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}

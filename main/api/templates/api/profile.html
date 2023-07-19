@@ -14,7 +14,7 @@
     {% include 'api/navbar.html' %}
     <div class = "container">
         <div class="userInformation">
-            <div class="userName">nikhilmeena</div>
+            <div class="userName">{{request.user.username}}</div>
             <div class="totalTestsTaken">Total Tests Taken {{151}}</div>
             <div class="testsOverview">
                 <table>
@@ -50,7 +50,11 @@
                     </tr>
                 </table>
             </div>
-            <div class="logout">Logout</div>
+            <div class="logout"><a href="/authentication/logout">
+                Logout
+            </a>
+                
+            </div>
         </div>
         <div class="testResults">
             <div class="testResultsHeading">Results</div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import json
 import pandas as pd
 import numpy as np
@@ -12,7 +12,7 @@ word_df = pd.read_csv("words.csv")
 
 
 def homePage(request):
-    return render(request,"api/homePage.html")
+    return render(request,"api/homePage.html" )
 
 def getParagraph(request, noofwords = 50):
 
@@ -37,7 +37,10 @@ def aboutPage(request):
     return render(request, 'api/about.html')
 
 def profilePage(request):
-    return render(request , 'api/profile.html')
+    if(request.user.is_authenticated):
+        return render(request , 'api/profile.html')
+    else: 
+        return HttpResponseRedirect("/authentication/login")
 
 def patterns(request):
     return render(request,"api/homePage.html")

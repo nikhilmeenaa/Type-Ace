@@ -1,10 +1,17 @@
+from django.db import models
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import RegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
-
 from django.contrib.auth.views import LoginView
+
+
+# MODEL FROM API APP FOR USERDATE
+# from  models import UserData
+
+UserData = models.ForeignKey('api.models.UserData')
+
 
 class CustomLoginView(LoginView):
     def get_success_url(self):
@@ -17,13 +24,20 @@ class CustomLoginView(LoginView):
 
 # Create your views here.
 def login(request):
+
+    if(request.user.is_authenticated):
+        return HttpResponseRedirect("/profile")
+
     form = RegisterForm()
     return render(request , 'authenticate/loginPage.html' , {"form" : form})
 
 
 def registration(request):
 
-    print(request.POST)
+    # print(request.POST)
+
+    if(request.user.is_authenticated):
+        return HttpResponseRedirect("/profile")
 
     if(request.method == "POST"):
         print("Method is POST")
@@ -41,7 +55,7 @@ def registration(request):
     else:
         form = RegisterForm()
 
-    form = RegisterForm()
+    # form = RegisterForm()
     
     return render(request, "authenticate/registrationPage.html", {'form': form} )
 

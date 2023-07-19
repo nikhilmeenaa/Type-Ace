@@ -40,7 +40,10 @@
         </div>
     </div> -->
 
-    {%include "api/navbar.html" %}
+
+    {% with title="Partial Template" content="This is some content." %}
+        {% include 'api/navbar.html' %}
+    {% endwith %}
 
     <div id="container">
         <div class="progress">

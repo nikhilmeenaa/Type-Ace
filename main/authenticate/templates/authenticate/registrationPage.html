@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,68 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{%static 'api/navbarStyle.css'%}">
+    <link rel="stylesheet" href="{%static 'authenticate/registration.css'%}">
 </head>
 
 <body>
     <div class="registrationPage">
-        <!-- <h1>Welcome to the Registration Page</h1> -->
-        <!-- <form action="registration" method="POST"> -->
-            <!-- {% csrf_token %} -->
-            <!-- {{form.first_name}}  -->
-            <!-- {{form.as_p}} -->
-            <!-- {{form}} -->
-            <!-- <button type="submit">Register</button> -->
-        <!-- </form> -->
+        
+        {%include 'api/navbar.html'%}
 
 <form class="login-form" method="POST">
     {% csrf_token %}
     <div class="row">
-        <div class="col-md-12">
-            {% if form.errors %}
-            {% for field in form %}
-            {% for error in field.errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-                <strong>{{ field|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endfor %}
-            {% for error in form.non_field_errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
-        </div>
 
-        <div class="col-md-6">
-            <div class="form-group position-relative">
-                <label>First name <span class="text-danger">*</span></label>
-                {{form.first_name}}
-            </div>
-            {% if form.first_name.errors %}
-            {% for error in form.first_name.errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
-        </div>
-        
-        <!-- <div class="col-md-6">
-            <div class="form-group position-relative">
-                <label>Last name <span class="text-danger">*</span></label>
-                {{form.last_name}}
-            </div>
-            {% if form.last_name.errors %}
-            {% for error in form.last_name.errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
-        </div> -->
-        <div class="col-md-12">
+
+        <div class="fields">
             <div class="form-group position-relative">
                 <label>Your Email <span class="text-danger">*</span></label>
                 {{form.email}}
@@ -79,7 +34,8 @@
             {% endfor %}
             {% endif %}
         </div>
-        <div class="col-md-12">
+
+        <div class="fields">
             <div class="form-group position-relative">
                 <label>Username <span class="text-danger">*</span></label>
                 {{form.username}}
@@ -92,7 +48,8 @@
             {% endfor %}
             {% endif %}
         </div>
-        <div class="col-md-12">
+
+        <div class="fields">
             <div class="form-group position-relative">
                 <label>Password <span class="text-danger">*</span></label>
                 {{form.password1}}
@@ -105,7 +62,8 @@
             {% endfor %}
             {% endif %}
         </div>
-        <div class="col-md-12">
+
+        <div class="fields">
             <div class="form-group position-relative">
                 <label>Confirm Password <span class="text-danger">*</span></label>
                 {{form.password2}}
@@ -118,21 +76,19 @@
             {% endfor %}
             {% endif %}
         </div>
-
-        </div>
-        <div class="col-md-12">
+        <div class="registerButton">
             <button class="btn btn-primary w-100" type="submit">Register</button>
         </div>
         <div class="mx-auto">
             <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a
-                    href="{% url 'login' %}" class="text-dark font-weight-bold">Sign in</a></p>
+                    href="{% url 'login' %}" class="text-dark font-weight-bold signin">Sign in</a></p>
         </div>
+        </div>
+
+
     </div>
 </form>
-            <div class="col-12 text-center">
-                <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="{% url 'login' %}"
-                        class="text-dark font-weight-bold">Sign In</a></p>
-            </div>
+
     </div>
 </body>
 
