@@ -10,7 +10,7 @@ from django.contrib.auth.views import LoginView
 # MODEL FROM API APP FOR USERDATE
 # from  models import UserData
 
-UserData = models.ForeignKey('api.models.UserData')
+# UserData = models.ForeignKey('api.models.UserData')
 
 
 class CustomLoginView(LoginView):

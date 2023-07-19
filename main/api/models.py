@@ -3,8 +3,23 @@ import json
 # Create your models here.
 
 
+import json
+from django.db import models
+
+class MyModel(models.Model):
+    my_list = models.TextField()
+
+    def set_my_list(self, value):
+        self.my_list = json.dumps(value)
+
+    def get_my_list(self):
+        return json.loads(self.my_list)
+
+
 class UsersData(models.Model):
-    username = models.CharField(max_length = 200 , null = False, unique = True)
+
+    username = models.CharField(max_length = 200 , default = "Hello", null = False, unique = True)
+    numer : models.IntegerField(null = True)
 
     totalTests30 = models.IntegerField(default = 0)
     totalTests50 = models.IntegerField(default = 0)
@@ -18,16 +33,16 @@ class UsersData(models.Model):
     totalTests150Sum = models.IntegerField(default = 0)
     totalTests200Sum = models.IntegerField(default = 0)
 
-    best30 = models.IntegerField(null = True)
-    best50 = models.IntegerField(null = True)
-    best100 = models.IntegerField(null = True)
-    best150 = models.IntegerField(null = True)
-    best200 = models.IntegerField(null = True)
+    best30 = models.IntegerField(default = 0)
+    best50 = models.IntegerField(default = 0)
+    best100 = models.IntegerField(default = 0)
+    best150 = models.IntegerField(default = 0)
+    best200 = models.IntegerField(default = 0)
 
-    results = models.TextField()
+    results = models.JSONField()
 
-    def set_results(self, value):
-        self.results = json.dumps(value)
+    # def set_results(self, value):
+    #     self.results = json.dumps(value)
 
-    def get_results(self):
-        return json.loads(self.results)
+    # def get_results(self):
+    #     return json.loads(self.results)

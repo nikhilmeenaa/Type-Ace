@@ -7,9 +7,9 @@
         <div class="link"><a href="/about">About</a></div>
 
         {% if request.user.is_authenticated %}
-            <div class="link"><a href="/profile">Profile</a></div>
+            <div class="link loginout"><a href="/profile">Profile</a></div>
         {%else%}
-            <div class="link"><a href="/authentication/login">Login</a></div>
+            <div class="link loginout"><a href="/login">Login</a></div>
         {% endif %}
 
         <div class="link"><a href="/set">Settings</a></div>

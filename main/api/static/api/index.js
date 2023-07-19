@@ -1,9 +1,17 @@
 const paraParentDiv = document.getElementById("toWrite");
 
+
+const csrfToken = document.cookie
+  .split('; ')
+  .find(cookie => cookie.startsWith('csrftoken='))
+  .split('=')[1];
+
+
+
 // calling the api and getting the paragraph
 
 let para = "cooler",
-  countValue = 30;
+  countValue = 1;
 
 let totalWords = para.split(" ").length;
 
@@ -87,7 +95,7 @@ progressLength = document.getElementById("progressLength");
 
 
 
-tArea.addEventListener("keydown", (event) => {
+tArea.addEventListener("keydown", async(event) => {
   if (Started == false) {
     Started = true;
     startTime = Date.now();
@@ -185,6 +193,21 @@ tArea.addEventListener("keydown", (event) => {
     console.log("Themes -> ", totalWords, timeTaken);
     progressLength.style.width = `100%`;
     wpm.innerHTML = String(Math.round((totalWords * 60) / timeTaken));
+
+    console.log(loginout)
+
+      
+
+    if(loginout == "Profile"){
+        response = await fetch("/result", {
+          method: "POST",
+          body: JSON.stringify({ words: countValue, wpm: wpm.innerHTML }),
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken,
+          },
+        });
+    }
   }
 });
 
@@ -290,10 +313,6 @@ for (let i = 0; i < countElements.length; i++) {
 }
 
 
-// console.log(window.location);
-
-// console.log(window.location.pathname)
-
 
 
 
@@ -308,7 +327,6 @@ for (let i = 0; i < links.length; i++) {
 }
 
 
-// console.log("Local Storage -> " )
-window.localStorage['color']  = "red";
+loginout = document.querySelector('.loginout a');
 
-// console.log(window.localStorage);
+loginout= loginout.innerHTML;

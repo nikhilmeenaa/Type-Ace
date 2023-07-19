@@ -15,7 +15,7 @@
     <div class = "container">
         <div class="userInformation">
             <div class="userName">{{request.user.username}}</div>
-            <div class="totalTestsTaken">Total Tests Taken {{151}}</div>
+            <div class="totalTestsTaken">Total Tests Taken {{ totalTests}}</div>
             <div class="testsOverview">
                 <table>
                     <tr>
@@ -26,31 +26,31 @@
                     </tr>
                     <tr>
                         <td>30</td>
-                        <td>90</td>
-                        <td>90</td>
-                        <td>90</th>
+                        <td>{{user.best30}}</td>
+                        <td>{{ avg30 }}</td>
+                        <td>{{user.totalTests30}}</th>
                     </tr>
                     <tr>
                         <td>50</td>
-                        <td>90</td>
-                        <td>90</td>
-                        <td>90</th>
+                        <td>{{user.best50}}</td>
+                        <td>{{ avg50 }}</td>
+                        <td>{{user.totalTests50}}</th>
                     </tr>
                     <tr>
                         <td>100</td>
-                        <td>90</td>
-                        <td>90</td>
-                        <td>90</th>
+                        <td>{{user.best150}}</td>
+                        <td>{{ avg100 }}</td>
+                        <td>{{user.totalTests100}}</th>
                     </tr>
                     <tr>
                         <td>150</td>
-                        <td>90</td>
-                        <td>90</td>
-                        <td>90</th>
+                        <td>{{user.best150}}</td>
+                        <td>{{ avg150 }}</td>
+                        <td>{{user.totalTests150}}</th>
                     </tr>
                 </table>
             </div>
-            <div class="logout"><a href="/authentication/logout">
+            <div class="logout"><a href="/logout">
                 Logout
             </a>
                 
@@ -67,21 +67,16 @@
                 <div class="200">200</div>
             </div>
             <div class="results">
-                <div class="resultInstance">
-                    <div class="wordsType">50</div>
-                    <div class="speed">110 WPM</div>
-                    <div class="date">5th Dec, 2023</div>
-                </div>
-                <div class="resultInstance">
-                    <div class="wordsType">50</div>
-                    <div class="speed">110 WPM</div>
-                    <div class="date">5th Dec, 2023</div>
-                </div>
-                <div class="resultInstance">
-                    <div class="wordsType">50</div>
-                    <div class="speed">110 WPM</div>
-                    <div class="date">5th Dec, 2023</div>
-                </div>
+                
+                {%for result in results%}
+                    <div class="resultInstance">
+                        <div class="wordsType">{{result.words}}</div>
+                        <div class="speed">{{result.wpm}} WPM</div>
+                        <div class="date">{{result.date}}</div>
+                    </div>
+
+                {%endfor%}
+                
             </div>
         </div>
     </div>
