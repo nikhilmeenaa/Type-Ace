@@ -145,7 +145,15 @@ body{
     margin-right: 10px;
 }
 
+.resultSelector{
+    cursor : pointer;
+    transition : trasform 0.2s ease-in-out;
+}
 
+.resultSelector:hover{
+    color : rgb(209, 205, 205);
+    trasform : scale(1.05)
+}
 
 
 

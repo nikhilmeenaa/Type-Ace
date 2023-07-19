@@ -59,17 +59,17 @@
         <div class="testResults">
             <div class="testResultsHeading">Results</div>
             <div class="words">
-                <div class="all">All</div>
-                <div class="30">30</div>
-                <div class="50">50</div>
-                <div class="100">100</div>
-                <div class="150">150</div>
-                <div class="200">200</div>
+                <div class=" resultSelector all">All</div>
+                <div class=" resultSelector 30">30</div>
+                <div class=" resultSelector 50">50</div>
+                <div class=" resultSelector 100">100</div>
+                <div class=" resultSelector 150">150</div>
+                <div class=" resultSelector 200">200</div>
             </div>
             <div class="results">
                 
                 {%for result in results%}
-                    <div class="resultInstance">
+                    <div class="resultInstance" name = "{{result.words}}">
                         <div class="wordsType">{{result.words}}</div>
                         <div class="speed">{{result.wpm}} WPM</div>
                         <div class="date">{{result.date}}</div>
@@ -83,4 +83,5 @@
 
 </body>
 <script src="{%static 'api/settings.js'%}"></script>
+<script src="{%static 'api/profile.js'%}"></script>
 </html>
