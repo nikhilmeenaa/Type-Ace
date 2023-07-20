@@ -56,3 +56,36 @@
     color: rgb(23, 255, 251);
 }
 
+
+
+@media screen and (max-width: 752px) {
+        .navbar {
+            width: 90vw;
+            /* border: 1px solid rgb(46, 43, 43); */
+            display: flex;
+            height: 3vh;
+        }
+}
+
+
+
+@media screen and (max-width: 580px) {
+    .navbar {
+        width: 90vw;
+        /* border: 1px solid rgb(46, 43, 43); */
+        display: flex;
+        height: 3vh;
+    }
+    body {
+        font-size: 14px;
+    }
+
+    .acetype {
+        font-size: large;
+    }
+
+    .links a {
+        padding: 0 5px;
+        font-size: normal;
+    }
+}
