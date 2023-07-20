@@ -1,10 +1,20 @@
 const paraParentDiv = document.getElementById("toWrite");
 
+let csrfToken;
 
-const csrfToken = document.cookie
-  .split('; ')
-  .find(cookie => cookie.startsWith('csrftoken='))
-  .split('=')[1];
+async function getCsrf() {
+  try {
+      csrfToken = document.cookie
+      .split("; ")
+      .find((cookie) => cookie.startsWith("csrftoken="))
+      .split("=")[1];
+  } catch (error) {
+    console.log(error);
+  }
+}
+ 
+getCsrf();
+
 
 
 
