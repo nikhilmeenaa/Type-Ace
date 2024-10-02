@@ -12,6 +12,7 @@ urlpatterns = [
     path("getpatterns", views.getPatterns),
     path("set", views.sett),
     path("result", views.result),
+    path('healthcheck', views.healthCheck),
 
     # AUTHENTICATION STUFF
     path("ch", views.check),
@@ -19,7 +20,7 @@ urlpatterns = [
     path("registration" , views.registration, name = "register" ) ,
     path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True,template_name='api/loginPage.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='api/logout.html'), name='logout'),
-
+ 
 ]
 
 

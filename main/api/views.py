@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import numpy as np
 from datetime import date
+import requests
 
 word_df = pd.read_csv("words.csv")
 
@@ -30,7 +31,6 @@ def getParagraph(request, noofwords = 50):
     jsonData = json.dumps(response)
     
     return HttpResponse(jsonData, content_type="application/json")
-
 
 
 def aboutPage(request):
@@ -243,3 +243,6 @@ def check(request):
     return HttpResponse("Unauthenticated" )
 
 
+def healthCheck(request):
+    res = requests.get("https://board-3254.onrender.com/")
+    return HttpResponse(res, content_type="application/json")
